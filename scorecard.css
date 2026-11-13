@@ -1,0 +1,255 @@
+/* body {
+    margin: 0;
+    background-color: rgb(18, 18, 61);
+}
+
+h3{
+    color: white;
+    font-weight: bolder;
+    font-size: 80px;
+    font-family: 'Courier New', Courier, monospace;
+   
+}
+
+
+#Home-scoreboard{
+    height: 100px;
+    width: 120px;
+    background-color: black;
+    color: red;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 50px;
+    
+    
+    
+}
+
+#Guest-scoreboard{
+    height: 100px;
+    width: 120px;
+    background-color: black;
+    color: red;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+     font-size: 50px;
+}
+
+
+button{
+    border: 2px solid white;
+    width: 50px;
+    height: 50px;
+    background: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn{ 
+    display: flex;
+    gap: 20px;
+}
+
+.newgamebtn{
+    width: 120px;
+    font-size: 20px ;
+    margin: 0;
+    height: 100px;
+}
+
+
+.home,.guest{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    gap: 10px;
+} */
+
+
+:root {
+    --page-background: #dfe4ec;
+    --board-background: #1b244a;
+    --display-background: #080001;
+    --score-color: #f94f6d;
+    --button-color: #9aabd8;
+    --white: #f9fafb;
+}
+
+/* Makes width and height calculations easier */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #1b244a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The scoreboard fills the complete screen */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: clamp(25px, 6vw, 70px);
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: clamp(20px, 6vw, 80px);
+
+    background: linear-gradient(145deg, #223064, #1b244a);
+}
+.home,
+.guest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+h3 {
+    margin: 0;
+
+    color: var(--white);
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+/* Both score displays */
+#Home-scoreboard,
+#Guest-scoreboard {
+    width: min(100%, 220px);
+    min-height: 150px;
+    margin: 0;
+    padding: 15px;
+
+    display: grid;
+    place-items: center;
+
+    background-color: var(--display-background);
+    color: var(--score-color);
+    border-radius: 12px;
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(4.5rem, 11vw, 7rem);
+    font-weight: bold;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+
+    text-shadow: 0 0 15px rgba(249, 79, 109, 0.45);
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.8),
+        0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    width: min(100%, 220px);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    height: 48px;
+    padding: 0;
+
+    border: 2px solid var(--button-color);
+    border-radius: 7px;
+
+    background-color: transparent;
+    color: var(--button-color);
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.15rem;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition:
+        transform 0.2s,
+        background-color 0.2s,
+        color 0.2s;
+}
+
+button:hover {
+    color: var(--board-background);
+    background-color: var(--button-color);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+/* Takes the full row below the three score buttons */
+.newgamebtn {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    height: 45px;
+
+    background-color: rgba(154, 171, 216, 0.12);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Smaller screens */
+@media (max-width: 500px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 30px 18px;
+        gap: 14px;
+        border-radius: 18px;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    #Home-scoreboard,
+    #Guest-scoreboard {
+        min-height: 105px;
+        font-size: 3.8rem;
+    }
+
+    .btn {
+        gap: 6px;
+    }
+
+    button {
+        height: 42px;
+        font-size: 1rem;
+    }
+
+    .newgamebtn {
+        font-size: 0.75rem;
+    }
+}

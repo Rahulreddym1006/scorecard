@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score-card</title>
+    <link rel="stylesheet" href="scorecard.css">
+    <script src="scorecard.js" defer> </script>
+
+</head>
+<body>
+
+    <div class="container">
+            <div class="home">
+                <h3>HOME</h3>
+                <p id="Home-scoreboard"> 0</p>
+                <div class="btn" id="home-btn"> 
+                <button onclick=homeplus1()>+1 </button>
+                <button onclick=homeplus2()>+2 </button>
+                <button onclick=homeplus3()>+3 </button>
+                <button class="newgamebtn" onclick="homeNewGame()">New Game </button>
+
+                <!-- <button onclick="addPoints('home', 1)">+1</button>
+<button onclick="addPoints('home', 2)">+2</button>
+<button onclick="addPoints('home', 3)">+3</button>
+<button onclick="resetScore('home')">Reset Home</button>  -->
+
+                </div>
+            </div>
+
+
+
+            <div class="guest">
+                <h3>GUEST</h3>
+                  <p id="Guest-scoreboard">0 </p>
+                <div class="btn" id="guest-btn"> 
+                <button onclick=guestplus1()>+1 </button>
+                <button onclick=guestplus2()>+2 </button>
+                <button onclick=guestplus3()>+3 </button>
+                <button  class="newgamebtn"  onclick=guestNewGame()>New Game </button>
+                <!-- <button onclick="addPoints('guest', 1)">+1</button>
+<button onclick="addPoints('guest', 2)">+2</button>
+<button onclick="addPoints('guest', 3)">+3</button>
+<button onclick="resetScore('guest')">Reset Guest</button> -->
+
+                </div>
+
+            </div>
+        </div>
+    
+</body>
+</html>
